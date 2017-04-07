@@ -17,7 +17,7 @@ public class InfosystemTest {
     assertNull(infosystem.getUri());
     assertNull(infosystem.getDocumentation());
     assertNull(infosystem.getName());
-    assertNull(infosystem.getObjective())
+    assertNull(infosystem.getObjective());
     assertNull(infosystem.getShortname());
     assertNull(infosystem.getMeta().getSystem_status().getTimestamp());
   }
