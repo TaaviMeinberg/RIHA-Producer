@@ -48,8 +48,8 @@ public class InfosystemController {
 
   @RequestMapping(value = "/save/", method = RequestMethod.POST)
   public String save(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("shortName") String shortName,
-                     @RequestParam("documentation") String documentation) {
-    Infosystem infosystem = new Infosystem(name, shortName, documentation, owner, format(toUTC(dateTimeService.now())), baseUrl);
+                     @RequestParam("objective") String objective,@RequestParam("documentation") String documentation) {
+    Infosystem infosystem = new Infosystem(name, shortName, documentation, objective, owner, format(toUTC(dateTimeService.now())), baseUrl);
     if (!isValid(infosystem)) throw new BadRequest();
 
     if (isEmpty(id)) {
@@ -76,6 +76,7 @@ public class InfosystemController {
     return isNotBlank(infosystem.getName())
       && isNotBlank(infosystem.getShortname())
       && isNotBlank(infosystem.getDocumentation())
+            && isNotBlank(infosystem.getObjective())
       && isNotBlank(infosystem.getOwner().getCode())
       && isNotBlank(infosystem.getMeta().getSystem_status().getTimestamp());
   }

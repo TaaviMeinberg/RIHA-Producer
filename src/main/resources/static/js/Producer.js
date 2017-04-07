@@ -48,6 +48,7 @@ function Producer() {
       row.find('.name').text(infosystem.name);
       row.find('.short-name').text(infosystem.shortname);
       row.find('.documentation').text(infosystem.documentation);
+      row.find('.objective').text(infosystem.objective);
       $('tbody').append(row);
     })
   }

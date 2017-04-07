@@ -14,14 +14,16 @@ public class Infosystem {
   String name;
   String shortname;
   String documentation;
+  String objective;
   Owner owner;
   Meta meta;
   String uri;
 
-  public Infosystem(String name, String shortName, String documentation, String ownerCode, String statusTimestamp, String baseUrl) {
+  public Infosystem(String name, String shortName, String documentation, String objective, String ownerCode, String statusTimestamp, String baseUrl) {
     this.name = name;
     this.shortname = shortName;
     this.documentation = documentation;
+    this.objective = objective;
     this.owner = new Owner(ownerCode);
     this.meta = new Meta(statusTimestamp);
     this.uri = buildUri(baseUrl, shortName);
@@ -53,6 +55,7 @@ public class Infosystem {
       getPropertyValue(jsonObject, "name"),
       getPropertyValue(jsonObject, "shortname"),
       getPropertyValue(jsonObject, "documentation"),
+            getPropertyValue(jsonObject, "objective"),
       getPropertyValue(jsonObject.getJSONObject("owner"), "code"),
       jsonObject.has("meta") && jsonObject.getJSONObject("meta").has("system_status")
         ? getPropertyValue(jsonObject.getJSONObject("meta").getJSONObject("system_status"), "timestamp")
