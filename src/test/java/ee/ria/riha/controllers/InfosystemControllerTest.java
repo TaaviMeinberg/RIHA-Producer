@@ -87,7 +87,7 @@ public class InfosystemControllerTest {
     doReturn(ZonedDateTime.of(2016, 1, 1, 10, 11, 12, 0, ZoneId.of("Europe/Tallinn"))).when(dateTimeService).now();
     doReturn(false).when(controller).isValid(any(Infosystem.class));
 
-    controller.save(null, "", "", "");
+    controller.save(null, "", "", "", "");
 
     verify(infosystemStorageService, never()).save(any(Infosystem.class));
   }
