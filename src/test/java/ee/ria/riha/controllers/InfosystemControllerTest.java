@@ -109,13 +109,14 @@ public class InfosystemControllerTest {
   public void isValid() {
     assertTrue(controller.isValid(new Infosystem("name", "shortName", "docUrl", "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
 
-    assertFalse(controller.isValid(new Infosystem("", "shortName", "docUrl", "12345", "2016-12-10T01:00:00", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("name", "", "docUrl", "12345", "2016-12-10T01:00:00", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("name", "shortName", "", "12345", "2016-12-10T01:00:00", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl", "", "2016-12-10T01:00:00", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl", "12345", "", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("    ", "   ", "   ", "   ", "  ", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem(null, null, null, null, null, "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("", "shortName", "docUrl",  "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "", "docUrl",  "objective", "12345",  "objective", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "shortName", "", "objective",  "12345", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl","",  "12345", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl",  "objective","", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl", "objective", "12345", "", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("    ", "   ", "   ","  ", "   ", "  ", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem(null, null, null, null, null, null, "http://base.url")));
   }
 
   @Test
