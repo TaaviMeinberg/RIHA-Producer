@@ -110,7 +110,7 @@ public class InfosystemControllerTest {
     assertTrue(controller.isValid(new Infosystem("name", "shortName", "docUrl", "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
 
     assertFalse(controller.isValid(new Infosystem("", "shortName", "docUrl",  "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
-    assertFalse(controller.isValid(new Infosystem("name", "", "docUrl",  "objective", "12345",  "objective", "2016-12-10T01:00:00", "http://base.url")));
+    assertFalse(controller.isValid(new Infosystem("name", "", "docUrl",  "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
     assertFalse(controller.isValid(new Infosystem("name", "shortName", "", "objective",  "12345", "2016-12-10T01:00:00", "http://base.url")));
     assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl","",  "12345", "2016-12-10T01:00:00", "http://base.url")));
     assertFalse(controller.isValid(new Infosystem("name", "shortName", "docUrl",  "objective","", "2016-12-10T01:00:00", "http://base.url")));
