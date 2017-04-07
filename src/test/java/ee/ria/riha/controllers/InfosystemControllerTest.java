@@ -44,7 +44,7 @@ public class InfosystemControllerTest {
     assertEquals("name", infosystem.getName());
     assertEquals("shortName", infosystem.getShortname());
     assertEquals("docUrl", infosystem.getDocumentation());
-    assertEqual("objective", infosystem.getObjective());
+    assertEquals("objective", infosystem.getObjective());
     assertEquals("123", infosystem.getOwner().getCode());
     assertEquals("2016-01-01T08:11:12", infosystem.getMeta().getSystem_status().getTimestamp());
     assertEquals("http://base.url/shortName", infosystem.getUri());
