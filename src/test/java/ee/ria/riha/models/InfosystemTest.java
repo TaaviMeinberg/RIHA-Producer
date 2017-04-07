@@ -17,6 +17,7 @@ public class InfosystemTest {
     assertNull(infosystem.getUri());
     assertNull(infosystem.getDocumentation());
     assertNull(infosystem.getName());
+    assertNull(infosystem.getObjective())
     assertNull(infosystem.getShortname());
     assertNull(infosystem.getMeta().getSystem_status().getTimestamp());
   }
@@ -31,6 +32,7 @@ public class InfosystemTest {
         "    \"code\": \"12345\"," +
         "  }," +
         "  \"documentation\": \"http://riha.eesti.ee\"," +
+        "  \"objective\": \"haridus\","+
         "  \"meta\": {" +
         "    \"system_status\": {" +
         "      \"timestamp\": \"2016-12-13T17:10:20.785\"" +
@@ -46,6 +48,7 @@ public class InfosystemTest {
     assertEquals("http://riha.eesti.ee", infosystem.getDocumentation());
     assertEquals("Rebaste register", infosystem.getName());
     assertEquals("fox", infosystem.getShortname());
+    assertEquals("haridus", infosystem.getObjective());
     assertEquals("2016-12-13T17:10:20.785", infosystem.getMeta().getSystem_status().getTimestamp());
   }
 
@@ -59,6 +62,7 @@ public class InfosystemTest {
       "    \"code\": \"70000562\"" +
       "  }," +
       "  \"documentation\": \"eesti_kirikute_koguduste_ja_koguduste_liitude_register\"," +
+      "  \"objective\": \"haridus\","+
       "  \"meta\": {" +
       "    \"system_status\": {" +
       "      \"timestamp\": \"2015-09-05T00:36:26.255215\"" +
@@ -71,6 +75,7 @@ public class InfosystemTest {
       "Eesti kirikute, koguduste ja koguduste liitude register",
       "Eesti kirikuregister",
       "eesti_kirikute_koguduste_ja_koguduste_liitude_register",
+      "haridus",
       "70000562",
       "2015-09-05T00:36:26.255215",
       "http://base.url");

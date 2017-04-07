@@ -36,7 +36,7 @@ public class InfosystemControllerTest {
     controller.baseUrl = "http://base.url";
     doReturn(true).when(controller).isValid(any(Infosystem.class));
 
-    controller.save(null, "name", "shortName", "docUrl");
+    controller.save(null, "name", "shortName", "docUrl", "objective");
 
     ArgumentCaptor<Infosystem> infosystemArgument = ArgumentCaptor.forClass(Infosystem.class);
     verify(infosystemStorageService).save(infosystemArgument.capture());
@@ -44,6 +44,7 @@ public class InfosystemControllerTest {
     assertEquals("name", infosystem.getName());
     assertEquals("shortName", infosystem.getShortname());
     assertEquals("docUrl", infosystem.getDocumentation());
+    assertEqual("objective", infosystem.getObjective());
     assertEquals("123", infosystem.getOwner().getCode());
     assertEquals("2016-01-01T08:11:12", infosystem.getMeta().getSystem_status().getTimestamp());
     assertEquals("http://base.url/shortName", infosystem.getUri());
@@ -56,7 +57,7 @@ public class InfosystemControllerTest {
     controller.baseUrl = "http://base.url";
     doReturn(true).when(controller).isValid(any(Infosystem.class));
 
-    controller.save("existing-shortName", "name", "new-shortName", "docUrl");
+    controller.save("existing-shortName", "name", "new-shortName", "docUrl", "objective");
 
     ArgumentCaptor<Infosystem> infosystemArgument = ArgumentCaptor.forClass(Infosystem.class);
     verify(infosystemStorageService).save(eq("existing-shortName"), infosystemArgument.capture());
@@ -64,6 +65,7 @@ public class InfosystemControllerTest {
     assertEquals("name", infosystem.getName());
     assertEquals("new-shortName", infosystem.getShortname());
     assertEquals("docUrl", infosystem.getDocumentation());
+    assertEquals("objective", infosystem.getObjective());
     assertEquals("123", infosystem.getOwner().getCode());
     assertEquals("2016-01-01T08:11:12", infosystem.getMeta().getSystem_status().getTimestamp());
     assertEquals("http://base.url/new-shortName", infosystem.getUri());
@@ -105,7 +107,7 @@ public class InfosystemControllerTest {
 
   @Test
   public void isValid() {
-    assertTrue(controller.isValid(new Infosystem("name", "shortName", "docUrl", "12345", "2016-12-10T01:00:00", "http://base.url")));
+    assertTrue(controller.isValid(new Infosystem("name", "shortName", "docUrl", "objective", "12345", "2016-12-10T01:00:00", "http://base.url")));
 
     assertFalse(controller.isValid(new Infosystem("", "shortName", "docUrl", "12345", "2016-12-10T01:00:00", "http://base.url")));
     assertFalse(controller.isValid(new Infosystem("name", "", "docUrl", "12345", "2016-12-10T01:00:00", "http://base.url")));

@@ -32,7 +32,7 @@ public class InfosystemStorageServiceTest {
   public void updateExistingInfosystem() throws IOException {
     Files.write(service.filePath, "[{\"shortname\":\"existing-short-name\"}]".getBytes());
 
-    service.save("existing-short-name", new Infosystem("name", "short-name", "http://doc.url", "ownerCode", "status-timestamp", "http://base.url"));
+    service.save("existing-short-name", new Infosystem("name", "short-name", "http://doc.url", "objective", "ownerCode", "status-timestamp", "http://base.url"));
 
     JSONAssert.assertEquals("["+ infosystemJson()+"]", fileData(), true);
   }
@@ -46,6 +46,7 @@ public class InfosystemStorageServiceTest {
         "    \"code\": \"ownerCode\"" +
         "  }," +
         "  \"documentation\": \"http://doc.url\"," +
+        "  \"objective\": \"objective\"," +
         "  \"meta\": {" +
         "    \"system_status\": {" +
         "      \"timestamp\": \"status-timestamp\"" +
@@ -59,7 +60,7 @@ public class InfosystemStorageServiceTest {
   public void save() throws IOException {
     doReturn("[]").when(service).load();
 
-    service.save(null, new Infosystem("name", "short-name", "http://doc.url", "ownerCode", "status-timestamp", "http://base.url"));
+    service.save(null, new Infosystem("name", "short-name", "http://doc.url", "objective", "ownerCode", "status-timestamp", "http://base.url"));
 
     JSONAssert.assertEquals("["+ infosystemJson()+"]", fileData(), true);
   }
@@ -68,7 +69,7 @@ public class InfosystemStorageServiceTest {
   public void save_mergesWithExistingInfosystems() throws IOException {
     Files.write(service.filePath, "[{\"name\":\"existing-system-name\"}]".getBytes());
 
-    service.save(null, new Infosystem("name", "short-name", "http://doc.url", "ownerCode", "status-timestamp", "http://base.url"));
+    service.save(null, new Infosystem("name", "short-name", "http://doc.url", "objective", "ownerCode", "status-timestamp", "http://base.url"));
 
     JSONAssert.assertEquals("[{\"name\":\"existing-system-name\"}," + infosystemJson()+ "]", fileData(), true);
   }
