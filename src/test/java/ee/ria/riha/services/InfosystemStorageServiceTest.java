@@ -52,7 +52,7 @@ public class InfosystemStorageServiceTest {
         "      \"timestamp\": \"status-timestamp\"" +
         "    }" +
         "  }," +
-        "  \"uri\": \"http://base.url/short-name\"" +
+        "  \"uri\": \"http://base.url/ownerCode/short-name\"" +
         "}";
   }
 

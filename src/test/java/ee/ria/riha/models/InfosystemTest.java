@@ -44,7 +44,7 @@ public class InfosystemTest {
     Infosystem infosystem = new Infosystem(new JSONObject(json), "http://base.url");
 
     assertEquals("12345", infosystem.getOwner().getCode());
-    assertEquals("http://base.url/fox", infosystem.getUri());
+    assertEquals("http://base.url/12345/fox", infosystem.getUri());
     assertEquals("http://riha.eesti.ee", infosystem.getDocumentation());
     assertEquals("Rebaste register", infosystem.getName());
     assertEquals("fox", infosystem.getShortname());
@@ -68,7 +68,7 @@ public class InfosystemTest {
       "      \"timestamp\": \"2015-09-05T00:36:26.255215\"" +
       "    }" +
       "  }," +
-      "  \"uri\": \"http://base.url/Eesti%20kirikuregister\"" +
+      "  \"uri\": \"http://base.url/70000562/Eesti%20kirikuregister\"" +
       "}";
 
     Infosystem infosystem = new Infosystem(
@@ -85,11 +85,11 @@ public class InfosystemTest {
 
   @Test
   public void buildUri() {
-    assertNull(Infosystem.buildUri("http://base.url", null));
-    assertEquals("http://base.url/foobar", Infosystem.buildUri("http://base.url", "foobar"));
-    assertEquals("http://base.url/Eesti%20kirikuregister", Infosystem.buildUri("http://base.url", "Eesti kirikuregister"));
-    assertEquals("https://base.url/Eesti%20kirikuregister", Infosystem.buildUri("https://base.url", "Eesti kirikuregister"));
-    assertEquals("http://base.url/%C3%95ppurite%20register", Infosystem.buildUri("http://base.url", "Õppurite register"));
-    assertEquals("http://base.url/K%C3%A4%C3%A4rik%C3%B5%20suusah%C3%BCppeb%C3%B6%C3%B6s", Infosystem.buildUri("http://base.url", "Käärikõ suusahüppeböös"));
+    assertNull(Infosystem.buildUri("http://base.url", null,null));
+    assertEquals("http://base.url/12345/foobar", Infosystem.buildUri("http://base.url", "12345","foobar"));
+    assertEquals("http://base.url/4332/Eesti%20kirikuregister", Infosystem.buildUri("http://base.url", "4332","Eesti kirikuregister"));
+    assertEquals("https://base.url/52331/Eesti%20kirikuregister", Infosystem.buildUri("https://base.url", "52331","Eesti kirikuregister"));
+    assertEquals("http://base.url/112233/%C3%95ppurite%20register", Infosystem.buildUri("http://base.url", "112233","Õppurite register"));
+    assertEquals("http://base.url/1234/K%C3%A4%C3%A4rik%C3%B5%20suusah%C3%BCppeb%C3%B6%C3%B6s", Infosystem.buildUri("http://base.url", "1234", "Käärikõ suusahüppeböös"));
   }
 }
