@@ -82,4 +82,17 @@ describe('Producer', function () {
 
     expect(producer._redirect).toHaveBeenCalledWith('/edit/lühinimi');
   });
+  
+  it('Cancel button click takes back to index', function() {
+	    loadFixtures('form.html');
+	    var producer = new Producer();
+	    spyOn(producer, '_redirect');
+	    //producer._createTableRows(data);
+	    //producer._initEditButtons();
+	    //var rows = $('tbody tr');
+
+	    $(forms).find('button.cancel').trigger('click');
+
+	    expect(producer._redirect).toHaveBeenCalledWith('/');
+	  });
 });
