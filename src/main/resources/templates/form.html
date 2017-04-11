@@ -30,13 +30,19 @@
 	</form>
 </div>
 <script>
+var nameOnLoad=document.forms["infosystem-form"]["name"].value;
+var shortNameOnLoad=document.forms["infosystem-form"]["shortName"].value;
+var documentationOnLoad=document.forms["infosystem-form"]["documentation"].value;
+var objectiveOnLoad=document.forms["infosystem-form"]["objective"].value;
+
 	function cancel() {
 		var name=document.forms["infosystem-form"]["name"].value;
 	    var shortName=document.forms["infosystem-form"]["shortName"].value;
 	    var documentation=document.forms["infosystem-form"]["documentation"].value;
 	    var objective=document.forms["infosystem-form"]["objective"].value;
 	    
-		if(name=="" && shortName=="" && documentation=="" && objective==""){
+		if((name=="" && name == nameOnLoad) && (shortName=="" && shortName == shortNameOnLoad) && 
+				(documentation=="" && documentation == documentationOnLoad) && (objective=="" && objective==objectiveOnLoad)){
 			window.location = "/";
 		} else{
 			if(confirm("Kas kindlasti soovid katkestada?")){
