@@ -41,8 +41,8 @@ var objectiveOnLoad=document.forms["infosystem-form"]["objective"].value;
 	    var documentation=document.forms["infosystem-form"]["documentation"].value;
 	    var objective=document.forms["infosystem-form"]["objective"].value;
 	    
-		if((name=="" && name == nameOnLoad) && (shortName=="" && shortName == shortNameOnLoad) && 
-				(documentation=="" && documentation == documentationOnLoad) && (objective=="" && objective==objectiveOnLoad)){
+		if((name=="" || name == nameOnLoad) && (shortName=="" || shortName == shortNameOnLoad) && 
+				(documentation=="" || documentation == documentationOnLoad) && (objective=="" || objective==objectiveOnLoad)){
 			window.location = "/";
 		} else{
 			if(confirm("Kas kindlasti soovid katkestada?")){
