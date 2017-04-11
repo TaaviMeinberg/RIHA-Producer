@@ -6,6 +6,7 @@ describe('Producer', function () {
       "meta": {"URI": "http://base.url/lühinimi"},
       "documentation": "https://12345.com/lyhinimi",
       "name": "nimi",
+      "objective": "eesmärk",
       "shortname": "lühinimi",
       "status": {"timestamp": "2016-12-13T06:54:27.358"}
     },
@@ -14,6 +15,7 @@ describe('Producer', function () {
       "meta": {"URI": "http://base.url/short-name"},
       "documentation": "https://12345.com/short-name",
       "name": "name",
+      "objective": "eesmärk",
       "shortname": "short-name",
       "status": {"timestamp": "2016-12-13T13:16:16.037"}
     }
@@ -28,9 +30,11 @@ describe('Producer', function () {
 
     expect(rows.length).toBe(2);
     expect($(rows[0]).find('.name').text()).toBe('nimi');
+    expect($(rows[0]).find('.ojbective').text()).toBe('eesmärk');
     expect($(rows[0]).find('.short-name').text()).toBe('lühinimi');
     expect($(rows[0]).find('.documentation').text()).toBe('https://12345.com/lyhinimi');
     expect($(rows[1]).find('.name').text()).toBe('name');
+    expect($(rows[1]).find('.objective').text()).toBe('objective');
     expect($(rows[1]).find('.short-name').text()).toBe('short-name');
     expect($(rows[1]).find('.documentation').text()).toBe('https://12345.com/short-name');
   });
