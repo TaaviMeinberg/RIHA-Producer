@@ -36,7 +36,7 @@ public class InfosystemControllerTest {
     controller.baseUrl = "http://base.url";
     doReturn(true).when(controller).isValid(any(Infosystem.class));
 
-    controller.save(null, "name", "shortName", "docUrl", "objective");
+    controller.save(null, "name", "shortName", "objective", "docUrl");
 
     ArgumentCaptor<Infosystem> infosystemArgument = ArgumentCaptor.forClass(Infosystem.class);
     verify(infosystemStorageService).save(infosystemArgument.capture());
@@ -57,7 +57,7 @@ public class InfosystemControllerTest {
     controller.baseUrl = "http://base.url";
     doReturn(true).when(controller).isValid(any(Infosystem.class));
 
-    controller.save("existing-shortName", "name", "new-shortName", "docUrl", "objective");
+    controller.save("existing-shortName", "name", "new-shortName", "objective", "docUrl");
 
     ArgumentCaptor<Infosystem> infosystemArgument = ArgumentCaptor.forClass(Infosystem.class);
     verify(infosystemStorageService).save(eq("existing-shortName"), infosystemArgument.capture());
