@@ -44,7 +44,7 @@ public class InfosystemTest {
     Infosystem infosystem = new Infosystem(new JSONObject(json), "http://base.url");
 
     assertEquals("12345", infosystem.getOwner().getCode());
-    assertEquals("http://base.url/fox", infosystem.getUri());
+    assertEquals("http://base.url/12345/fox", infosystem.getUri());
     assertEquals("http://riha.eesti.ee", infosystem.getDocumentation());
     assertEquals("Rebaste register", infosystem.getName());
     assertEquals("fox", infosystem.getShortname());

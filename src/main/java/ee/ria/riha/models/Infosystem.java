@@ -26,7 +26,7 @@ public class Infosystem {
     this.objective = objective;
     this.owner = new Owner(ownerCode);
     this.meta = new Meta(statusTimestamp);
-    this.uri = buildUri(baseUrl, shortName);
+    this.uri = buildUri(baseUrl, ownerCode, shortName);
   }
 
   @Getter
@@ -64,10 +64,10 @@ public class Infosystem {
     );
   }
 
-  static String buildUri(String baseUrl, String shortName) {
+  static String buildUri(String baseUrl, String ownerCode, String shortName) {
     if (shortName == null) return null;
     try {
-      return baseUrl + "/" + encode(shortName, UTF_8);
+      return baseUrl + "/" + encode(ownerCode, UTF_8) + "/" + encode(shortName, UTF_8);
     }
     catch (UnsupportedEncodingException e) {
       throw new RuntimeException(e);
