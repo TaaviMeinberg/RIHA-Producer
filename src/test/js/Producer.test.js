@@ -24,7 +24,6 @@ describe('Producer', function () {
   it('fills table with info system data', function () {
     loadFixtures('index.html');
     
-    
     new Producer()._createTableRows(data);
 
     var rows = $('tbody tr');
