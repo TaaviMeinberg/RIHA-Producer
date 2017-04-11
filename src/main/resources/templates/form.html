@@ -22,11 +22,27 @@
       </div>
 
       <button type="submit" class="btn btn-default">Salvesta</button>
+      <button class="btn btn-danger cancel">Katkesta</button>
     </form>
   </div>
   <script>
+  	var self = this;
+  
     $(function() {
       $('#infosystem-form').validator();
     })
+    
+    self._redirect = function (url) {
+    	window.location = url;
+  	};
+    
+    self._initCancelButtons = function () {
+	    $('#infosystems-form').on('click', 'button.cancel', function () {
+	      if (confirm('Oled kindel, et soovid katkestada?')) {
+	    	  self._redirect(javascript:history.back());
+	      }
+	    });
+	  };
+    
   </script>
 </@layout.html>
