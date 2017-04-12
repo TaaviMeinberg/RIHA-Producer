@@ -1,5 +1,5 @@
-<#import "layout.html" as layout> <@layout.html>
-<script src="/js/CancelButton.js"></script>
+<#import "layout.html" as layout> <@layout.html> <script
+	src="/js/CancelButton.js"></script>
 <div class="container">
 	<h1>Sisesta infosüsteemi andmed</h1>
 	<form name="infosystem-form" id="infosystem-form" method="post"
@@ -32,6 +32,8 @@
 	</form>
 </div>
 <script>
+	window.onload = onPageLoad();
+
 	$(function() {
 		$('#infosystem-form').validator();
 	})

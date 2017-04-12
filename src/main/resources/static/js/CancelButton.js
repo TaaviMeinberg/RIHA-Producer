@@ -1,7 +1,15 @@
-var nameOnLoad = getInputValue("infosystem-form", "name");
-var shortNameOnLoad = getInputValue("infosystem-form", "shortName");
-var documentationOnLoad = getInputValue("infosystem-form", "documentation");
-var objectiveOnLoad = getInputValue("infosystem-form", "objective");
+var nameOnLoad;
+var shortNameOnLoad;
+var documentationOnLoad;
+var objectiveOnLoad;
+
+
+function onPageLoad() {
+	var nameOnLoad = getInputValue("infosystem-form", "name");
+	var shortNameOnLoad = getInputValue("infosystem-form", "shortName");
+	var documentationOnLoad = getInputValue("infosystem-form", "documentation");
+	var objectiveOnLoad = getInputValue("infosystem-form", "objective");
+}
 
 function cancel() {
 	var name = getInputValue("infosystem-form", "name");
