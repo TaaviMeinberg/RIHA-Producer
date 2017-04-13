@@ -1,4 +1,4 @@
-var nameOnLoad = document.forms["infosystem-form"]["name"].value;
+var nameOnLoad = getInputValue("infosystem-form", "name");
 var shortNameOnLoad = getInputValue("infosystem-form", "shortName");
 var documentationOnLoad = getInputValue("infosystem-form", "documentation");
 var objectiveOnLoad = getInputValue("infosystem-form", "objective");
