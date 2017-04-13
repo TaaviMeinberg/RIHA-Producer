@@ -22,6 +22,5 @@ function cancel() {
 }
 
 function getInputValue(formName, inputName) {
-	//return document.forms[formName][inputName].value;
-	return "";
+	return document.forms[formName][inputName].value;
 }

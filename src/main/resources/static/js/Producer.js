@@ -22,9 +22,6 @@ function Producer() {
     });
   };
 
-  self._test = function () {
-	  return document.forms[formName][inputName].value;
-  };
   self._redirect = function (url) {
     window.location = url;
   };
