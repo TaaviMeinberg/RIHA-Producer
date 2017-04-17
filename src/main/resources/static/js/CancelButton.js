@@ -22,10 +22,6 @@ function cancel() {
 }
 
 function getInputValue(inputID) {
-<<<<<<< HEAD
 	return document.getElementById(inputID).value;
-=======
-	return getElementById(inputID).value;
->>>>>>> branch 'CancelButton' of https://github.com/TaaviMeinberg/RIHA-Producer
 	//return document.forms[formName][inputName].value;
 }
