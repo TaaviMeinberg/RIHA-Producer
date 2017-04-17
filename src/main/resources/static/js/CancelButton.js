@@ -1,3 +1,5 @@
+"use strict";
+
 var nameOnLoad = getInputValue("name");
 var shortNameOnLoad = getInputValue("short-name");
 var documentationOnLoad = getInputValue("documentation");
@@ -23,5 +25,4 @@ function cancel() {
 
 function getInputValue(inputID) {
 	return document.getElementById(inputID).value;
-	//return document.forms[formName][inputName].value;
 }
