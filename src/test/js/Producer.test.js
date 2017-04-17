@@ -91,7 +91,7 @@ describe('Producer', function () {
 	    //producer._initEditButtons();
 	    //var rows = $('tbody tr');
 
-	    $(forms).find('button.cancel').trigger('click');
+	    $(form).find('button.cancel').trigger('click');
 
 	    expect(producer._redirect).toHaveBeenCalledWith('/');
 	  });
