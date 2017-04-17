@@ -1,28 +1,21 @@
 "use strict";
 
-var nameOnLoad = getInputValue("name");
-var shortNameOnLoad = getInputValue("short-name");
-var documentationOnLoad = getInputValue("documentation");
-var objectiveOnLoad = getInputValue("objective");
+function CancelButton() {
 
-function cancel() {
-	var name = getInputValue("name");
-	var shortName = getInputValue("short-name");
-	var documentation = getInputValue("documentation");
-	var objective = getInputValue("objective");
-	
-	if ((name == "" || name == nameOnLoad)
-			&& (shortName == "" || shortName == shortNameOnLoad)
-			&& (documentation == "" || documentation == documentationOnLoad)
-			&& (objective == "" || objective == objectiveOnLoad)) {
-		window.location = "/";
-	} else {
-		if (confirm("Kas kindlasti soovid katkestada?")) {
-			window.location = "/";
-		}
-	}
-}
+	var self = this;
 
-function getInputValue(inputID) {
-	return document.getElementById(inputID).value;
+	self.init = function() {
+		self._initCancelButton();
+	};
+
+	self._redirect = function(url) {
+		window.location = url;
+	};
+
+	self._initCancelButton = function() {
+		console.log(self);
+		$('#cancelButton').on('click', function() {
+			self._redirect('/');
+		});
+	};
 }
