@@ -83,14 +83,5 @@ describe('Producer', function () {
     expect(producer._redirect).toHaveBeenCalledWith('/edit/lühinimi');
   });
   
-  it('Cancel button click takes back to index', function() {
-	    loadFixtures('form.html');
-	    var producer = new CancelButton();
-	    spyOn(producer, '_redirect');
-	    producer._initCancelButton();
 
-	    $('#cancelButton').trigger('click');
-
-	    expect(producer._redirect).toHaveBeenCalledWith('/');
-	  });
 });
