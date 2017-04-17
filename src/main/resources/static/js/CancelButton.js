@@ -13,12 +13,13 @@ function CancelButton() {
 	};
 	
 	self._getInputValue = function (inputID) {
-	    document.getElementById(inputID).value;
+		console.log(document.getElementById(inputID).value);
+	    return document.getElementById(inputID).value;
 	  };
 
 	self._initCancelButton = function() {
 		$('#cancelButton').on('click', function() {
-			if(self._getInputValue("name")==""){
+			if(self._getInputValue("name")=="" || self._getInputValue("short-name")==""){
 				self._redirect('/');
 			} else {
 				if(confirm("Kas kindlasti soovid katkestada?")){
