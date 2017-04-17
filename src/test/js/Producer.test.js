@@ -85,13 +85,11 @@ describe('Producer', function () {
   
   it('Cancel button click takes back to index', function() {
 	    loadFixtures('form.html');
-	    var producer = new Producer();
+	    var producer = new CancelButton();
 	    spyOn(producer, '_redirect');
-	    //producer._createTableRows(data);
-	    //producer._initEditButtons();
-	    //var rows = $('tbody tr');
+	    producer._initCancelButton();
 
-	    $(forms).find('button.cancel').trigger('click');
+	    ('#cancelButton').trigger('click');
 
 	    expect(producer._redirect).toHaveBeenCalledWith('/');
 	  });
