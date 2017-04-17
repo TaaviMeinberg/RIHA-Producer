@@ -13,7 +13,6 @@ function CancelButton() {
 	};
 
 	self._getInputValue = function(inputID) {
-		console.log(document.getElementById(inputID).value);
 		return document.getElementById(inputID).value;
 	};
 

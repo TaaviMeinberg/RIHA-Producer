@@ -1,4 +1,4 @@
-var nameOnLoad = getInputValue("name");
+/* var nameOnLoad = getInputValue("name");
 var shortNameOnLoad = getInputValue("short-name");
 var documentationOnLoad = getInputValue("documentation");
 var objectiveOnLoad = getInputValue("objective");
@@ -23,4 +23,4 @@ function cancel() {
 
 function getInputValue(inputID) {
 	return document.getElementById(inputID).value;
-}
+} */
