@@ -1,13 +1,13 @@
 "use strict";
 
 var nameOnLoad = getInputValue("name");
-var shortNameOnLoad = getInputValue("short-name");
+var shortNameOnLoad = getInputValue("shortName");
 var documentationOnLoad = getInputValue("documentation");
 var objectiveOnLoad = getInputValue("objective");
 
 function cancel() {
 	var name = getInputValue("name");
-	var shortName = getInputValue("short-name");
+	var shortName = getInputValue("shortName");
 	var documentation = getInputValue("documentation");
 	var objective = getInputValue("objective");
 	
@@ -23,6 +23,6 @@ function cancel() {
 	}
 }
 
-function getInputValue(inputID) {
-	return document.getElementById(inputID).value;
+function getInputValue(inputName) { 
+	return document.getElementsByName(inputName)[0].value;
 }
