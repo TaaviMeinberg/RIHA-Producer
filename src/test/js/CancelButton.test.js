@@ -5,7 +5,8 @@ describe('CancelButton', function() {
 		new CancelButton()._initCancelButton();
 
 		$('#cancelButton').trigger('click');
-
+		
+		expect('click').toHaveBeenTriggeredOn('#cancelButton');
 		expect(spyOn(new CancelButton(),'_redirect')).toHaveBeenCalledWith('/');
 	});
 });
