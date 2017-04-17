@@ -1,37 +1,16 @@
 "use strict";
 
-var webPage = require('webpage');
-var page = webPage.create();
-
-page.open('/Users/taavim/Documents/workspace/RIHA-Producer/src/main/resources/templates/form.html', function(status) {
-
-var nameOnLoad = page.evaluate(function() {
-	return document.getElementById("name").value;
-});
-var shortNameOnLoad = page.evaluate(function() {
-	return document.getElementById("short-name").value;
-});
-var documentationOnLoad = page.evaluate(function() {
-	return document.getElementById("documentation").value;
-});
-var objectiveOnLoad = page.evaluate(function() {
-	return document.getElementById("objective").value;
-});
+var nameOnLoad = getInputValue("name");
+var shortNameOnLoad = getInputValue("short-name");
+var documentationOnLoad = getInputValue("documentation");
+var objectiveOnLoad = getInputValue("objective");
 
 function cancel() {
-	var name = page.evaluate(function() {
-		return document.getElementById("name").value;
-	});
-	var shortName = page.evaluate(function() {
-		return document.getElementById("short-name").value;
-	});
-	var documentation = page.evaluate(function() {
-		return document.getElementById("documentation").value;
-	});
-	var objective = page.evaluate(function() {
-		return document.getElementById("objective").value;
-	});
-
+	var name = getInputValue("name");
+	var shortName = getInputValue("short-name");
+	var documentation = getInputValue("documentation");
+	var objective = getInputValue("objective");
+	
 	if ((name == "" || name == nameOnLoad)
 			&& (shortName == "" || shortName == shortNameOnLoad)
 			&& (documentation == "" || documentation == documentationOnLoad)
@@ -43,8 +22,7 @@ function cancel() {
 		}
 	}
 }
-});
-/*
- * function getInputValue(inputID) { return
- * document.getElementById(inputID).value; }
- */
+
+function getInputValue(inputID) {
+	return document.getElementById(inputID).value;
+}
