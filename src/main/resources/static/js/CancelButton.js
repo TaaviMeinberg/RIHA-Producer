@@ -11,11 +11,21 @@ function CancelButton() {
 	self._redirect = function(url) {
 		window.location = url;
 	};
+	
+	self._getInputValue = function (inputID) {
+	    document.getElementById(inputID).value;
+	  };
 
 	self._initCancelButton = function() {
-		console.log(self);
 		$('#cancelButton').on('click', function() {
-			self._redirect('/');
+			if(self._getInputValue("name" == "")){
+				self._redirect('/');
+			} else {
+				if(confirm("Kas kindlasti soovid katkestada?")){
+					self._redirect('/');
+				}
+			}
+			
 		});
 	};
 }
