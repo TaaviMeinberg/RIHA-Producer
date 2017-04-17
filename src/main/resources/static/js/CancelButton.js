@@ -1,7 +1,5 @@
 "use strict";
 
-var self = this;
-
 var nameOnLoad = getInputValue("name");
 var shortNameOnLoad = getInputValue("short-name");
 var documentationOnLoad = getInputValue("documentation");
@@ -12,7 +10,7 @@ function cancel() {
 	var shortName = getInputValue("short-name");
 	var documentation = getInputValue("documentation");
 	var objective = getInputValue("objective");
-
+	
 	if ((name == "" || name == nameOnLoad)
 			&& (shortName == "" || shortName == shortNameOnLoad)
 			&& (documentation == "" || documentation == documentationOnLoad)
@@ -26,5 +24,5 @@ function cancel() {
 }
 
 function getInputValue(inputID) {
-	return self.getElementById(inputID).value;
+	return document.getElementById(inputID).value;
 }
