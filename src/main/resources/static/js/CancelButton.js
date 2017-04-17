@@ -1,13 +1,13 @@
-var nameOnLoad = getInputValue("infosystem-form", "name");
-var shortNameOnLoad = getInputValue("infosystem-form", "shortName");
-var documentationOnLoad = getInputValue("infosystem-form", "documentation");
-var objectiveOnLoad = getInputValue("infosystem-form", "objective");
+var nameOnLoad = getInputValue("name");
+var shortNameOnLoad = getInputValue("shortName");
+var documentationOnLoad = getInputValue("documentation");
+var objectiveOnLoad = getInputValue("objective");
 
 function cancel() {
-	var name = getInputValue("infosystem-form", "name");
-	var shortName = getInputValue("infosystem-form", "shortName");
-	var documentation = getInputValue("infosystem-form", "documentation");
-	var objective = getInputValue("infosystem-form", "objective");
+	var name = getInputValue("name");
+	var shortName = getInputValue("shortName");
+	var documentation = getInputValue("documentation");
+	var objective = getInputValue("objective");
 	
 	if ((name == "" || name == nameOnLoad)
 			&& (shortName == "" || shortName == shortNameOnLoad)
@@ -21,6 +21,7 @@ function cancel() {
 	}
 }
 
-function getInputValue(formName, inputName) {
-	return document.forms[formName][inputName].value;
+function getInputValue(inputID) {
+	return getElementById(inputID).value;
+	//return document.forms[formName][inputName].value;
 }
