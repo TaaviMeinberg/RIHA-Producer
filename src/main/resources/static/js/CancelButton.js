@@ -1,11 +1,11 @@
 var nameOnLoad = getInputValue("name");
-var shortNameOnLoad = getInputValue("shortName");
+var shortNameOnLoad = getInputValue("short-name");
 var documentationOnLoad = getInputValue("documentation");
 var objectiveOnLoad = getInputValue("objective");
 
 function cancel() {
 	var name = getInputValue("name");
-	var shortName = getInputValue("shortName");
+	var shortName = getInputValue("short-name");
 	var documentation = getInputValue("documentation");
 	var objective = getInputValue("objective");
 	
