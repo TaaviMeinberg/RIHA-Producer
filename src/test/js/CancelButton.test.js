@@ -1,16 +1,12 @@
-require('../../main/resources/static/js/CancelButton.js');
-
 describe('CancelButton', function() {
 	it('Cancel button click takes back to index', function() {
 		loadFixtures('form.html');
-		
-		var button = new CancelButton();
-		var spyEvent = spyOnEvent('#cancelButton', 'click');
-		button._initCancelButton();
-		$('#cancelButton').trigger('click');
-		
-		expect('click').toHaveBeenTriggeredOn('#cancelButton');
-		expect(spyEvent).toHaveBeenTriggered();
-		//expect(spyOn(button, '_redirect')).toHaveBeenCalledWith('/');
+		var producer = new CancelButton();
+	    spyOn(producer, '_redirect');
+	    producer._initCancelButton();
+
+	    $('#infosystem-form').find('button.edit').trigger('click');
+
+	    expect(producer._redirect).toHaveBeenCalledWith('/');
 	});
 });
