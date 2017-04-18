@@ -1,8 +1,10 @@
+require('../../main/resources/static/js/CancelButton.js');
+
 describe('CancelButton', function() {
 	it('Cancel button click takes back to index', function() {
 		loadFixtures('form.html');
 		
-		var button = new CancelButton(); 
+		var button = new CancelButton();
 		var spyEvent = spyOnEvent('#cancelButton', 'click');
 		button._initCancelButton();
 		$('#cancelButton').trigger('click');
