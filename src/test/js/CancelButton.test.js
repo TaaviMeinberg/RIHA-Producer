@@ -4,6 +4,7 @@ describe('CancelButton', function() {
 		
 		var button = new CancelButton(); 
 		var spyEvent = spyOnEvent('#cancelButton', 'click');
+		button._initCancelButton();
 		$('#cancelButton').trigger('click');
 		
 		expect('click').toHaveBeenTriggeredOn('#cancelButton');
