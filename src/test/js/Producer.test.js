@@ -89,7 +89,7 @@ describe('Producer', function () {
 	    spyOn(producer, '_redirect');
 	    producer._initCancelButton();
 
-	    $('#infosystem-form').find('button.edit').trigger('click');
+	    $('#infosystem-form').find('button.cancel').trigger('click');
 
 	    expect(producer._redirect).toHaveBeenCalledWith('/');
 	});
