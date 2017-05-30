@@ -119,7 +119,6 @@ describe('Producer', function () {
 	    
 	    expect('click').toHaveBeenTriggeredOn('#cancelButton');
 		expect(spyEvent).toHaveBeenTriggered();
-
-	    //expect(producer._redirect).toHaveBeenCalledWith('/');
+		expect(producer._redirect).toHaveBeenCalledWith('/');
 	});
 });
