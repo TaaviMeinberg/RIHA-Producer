@@ -84,32 +84,6 @@ describe('Producer', function () {
   });
   
   it('Cancel button click takes back to index', function() {
-//	  	setFixtures(
-//	  			'<div class="container">'+
-//	  			'<h1>Sisesta infosüsteemi andmed</h1>'+
-//	  			'<form name="infosystem-form" id="infosystem-form" method="post" action="/save/">'+
-//	  				'<input type="hidden" name="id" value="${(infosystem.shortname)!}">'+
-//	  				'<div class="form-group">'+
-//	  					'<label for="name">Nimi</label>'+ 
-//	  					'<input type="text" class="form-control" id="name" name="name" placeholder="Nimi" required value="${(infosystem.name)!}">'+
-//	  				'</div>'+
-//	  				'<div class="form-group">'+
-//	  					'<label for="short-name">Lühinimi</label>'+
-//	  					'<input type="text" class="form-control" id="short-name" name="shortName" placeholder="Lühinimi" required value="${(infosystem.shortname)!}">'+
-//	  				'</div>'+
-//	  				'<div class="form-group">'+
-//	  					'<label for="documentation">Dokumentatsiooni URL</label>'+ 
-//	  					'<input type="text" class="form-control" id="documentation" name="documentation" placeholder="Dokumentatsiooni URL" required value="${(infosystem.documentation)!}">'+
-//	  				'</div>'+
-//	  				'<div class="form-group">'+
-//	  					'<label for="objective">Eesmärk</label>'+ 
-//	  					'<input type="text" class="form-control" id="objective" name="objective" placeholder="Eesmärk" required value="${(infosystem.objective)!}">'+
-//	  				'</div>'+
-//
-//	  				'<button type="submit" class="btn btn-default">Salvesta</button>'+
-//	  				'<button id="cancelButton" type="button" class="btn btn-danger cancel">Katkesta</button>'+
-//	  			'</form>'+
-//	  		'</div>');
 	  	loadFixtures('form.html');
 		var producer = new CancelButton();
 	    spyOn(producer, '_redirect');
